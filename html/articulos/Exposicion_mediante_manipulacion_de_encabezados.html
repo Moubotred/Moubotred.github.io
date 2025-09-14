@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+    <html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Exposición de documentos sensibles del sitio web del courier de Luz del Sur</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <link rel="stylesheet" href="../assets/css/articulos.css">
+    
+    </head>
+    <body>
+        <!-- Header -->
+        <header class="header">
+            <div class="nav-container">
+                <a href="index.html" class="logo">TGRZ</a>
+                <nav>
+                    <ul class="nav-menu">
+                        <li><a href="../index.html">Inicio</a></li>
+                        <li><a href="sobre-mi.html">Sobre mí</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+    
+        <main>
+            <!-- Article Header -->
+            <div class="article-header">
+                <h1 class="article-title">Exposición de documentos sensibles del sitio web del courier de Luz del Sur</h1>
+                <div class="article-meta">
+                    <div><i class="far fa-calendar"></i> 15 de Noviembre, 2024</div>
+                    <div><i class="far fa-clock"></i> 5 min de lectura</div>
+                    <div><i class="far fa-eye"></i> 1,000 vistas</div>
+                </div>
+            </div>
+    
+            <!-- Article Content -->
+            <div class="article-content">
+                <!-- Main Content -->
+                 <!-- descripcion del analisis y premisa -->
+                <div class="article-body">
+                    <p>
+                        comesare diciendo que fue una inespeda sospresa que los servicios de terceros tenias mas 
+                        seguridad con respecto al acceso de informacion pero fue algo simple ver las rutas de la 
+                        web y tansolo usando las herramientas de desarrollador del navegador y tanbie  provando son
+                        programas de intercepcion de solicitude como burpsuit o caido ver los encabezados y como
+                        estan esctrurtutados para poder replicarlos usando curl o python
+                    </p>
+    
+                    <!-- resaltado de informacion -->
+                    <div class="highlight-box">
+                        <p>este destaca al poca seguridad o inportacion que le dan a su informacion por mas que sean simples documentos en pdf 
+                            uno podria infecarlos y usar osint para hacerce pasar por otras persona de rango superior y ganar informacion 
+                            o al usuario cliente poder enganar de usando ingenieria social y caer facilmente con la informacion extraida del pdf
+                        </p>
+                    </div>
+    
+                    <!-- punto a definir -->
+                    <h2>Manipulacion de Origin y Referer </h2>
+                    <p>
+                        Origin y Referer son parte de la solicitud que hace uno desde una web pero uno no lo ve ya 
+                        sea la solicitud para acceder a un recurso interno o externo como acceder a una foto pero
+                        en este caso se accedio a un recurso interno en php por una ruta que se hallo y usando los
+                        parametros corretos como suministro quien (origin) y a donde (Referer) va la solicitud uno 
+                        puede tener el pdf solo con ver los encabezados donde se halla esta informacion
+                     </p>
+    
+                    <!-- <p>La implementación típica involucra URLs estructuradas como:</p> -->
+    
+                    <!-- ejemplo en codigo -->
+                    <div class="code-block">
+                        <code>
+                            <span class="comment">// Ejemplo de URL en sitio pirata</span><br>
+                            https://sitio-pirata.example/<span class="keyword">stream</span>/<span class="string">tt33043892</span>/<span class="string">1080p</span><br><br>
+                            
+                            <span class="comment">// Equivalente en IMDb</span><br>
+                            https://www.imdb.com/<span class="keyword">title</span>/<span class="string">tt33043892</span>
+                        </code>
+                    </div>
+    
+                    <!-- punto a definir en tarjetas-->
+                    <h2>Principales riesgos de seguridad identificados</h2>
+    
+                    <!-- tarjetas de informacion -->
+                    <div class="risk-grid">
+                        <div class="risk-card">
+                            <h3><i class="fas fa-door-open"></i> Exposición de rutas</h3>
+                            <p>La estructura predecible de URLs permite el escaneo automatizado y la enumeración de todo el catálogo disponible, exponiendo la arquitectura completa del sitio.</p>
+                        </div>
+    
+                        <div class="risk-card">
+                            <h3><i class="fas fa-ban"></i> Falta de autorización</h3>
+                            <p>La ausencia de mecanismos de verificación de permisos permite el acceso directo a recursos sin autenticación, facilitando el scraping masivo.</p>
+                        </div>
+    
+                        <div class="risk-card">
+                            <h3><i class="fas fa-database"></i> Enumeration attacks</h3>
+                            <p>Atacantes pueden iterar sobre IDs válidos para descubrir contenido no listado públicamente, comprometiendo todo el inventario.</p>
+                        </div>
+    
+                        <div class="risk-card">
+                            <h3><i class="fas fa-shield-alt"></i> Mecanismos de protección inexistentes</h3>
+                            <p>Falta de rate limiting, WAFs o sistemas de detección de bots, permitiendo abuso ilimitado de los recursos.</p>
+                        </div>
+                    </div>
+    
+                    <!-- punto a definir -->
+    
+                    <h2>Implicaciones para la infraestructura</h2>
+                    <p>La implementación de este patrón revela importantes deficiencias en el diseño de la infraestructura:</p>
+    
+                    <!-- sub punto -->
+                    <h3>1. Arquitectura de almacenamiento expuesta</h3>
+                    <p>La correlación directa entre identificadores y recursos permite deducir la estructura de almacenamiento, facilitando ataques dirigidos.</p>
+    
+                    <!-- sub punto -->
+                    <h3>2. Metadatos comprometidos</h3>
+                    <p>Al utilizar IDs públicos, los atacantes pueden correlacionar fácilmente el contenido pirateado con información legal en IMDb.</p>
+    
+                    <!-- sub punto -->
+                    <h3>3. Vulnerabilidad a automated scraping</h3>
+                    <p>La predictibilidad del sistema permite la extracción masiva de contenido mediante scripts simples.</p>
+    
+                    <!-- recomendacion -->
+                    <h2>Recomendaciones de mitigación</h2>
+                    <p>Para los operadores de plataformas legítimas, este patrón sirve como recordatorio de las mejores prácticas esenciales:</p>
+    
+                    <div class="code-block">
+                        <code>
+                            <span class="comment">// En lugar de identificadores públicos predecibles</span><br>
+                            /movie/<span class="string">tt33043892</span><br><br>
+                            
+                            <span class="comment">// Utilizar UUIDs o hashes no enumerables</span><br>
+                            /movie/<span class="string">a3f8e7b2-4c1d-4e89-bb7a-0c93f6e5d4c1</span><br><br>
+                            
+                            <span class="comment">// Implementar controles de autorización</span><br>
+                            <span class="keyword">if</span> (!hasAccess(user, resource)) {<br>
+                            &nbsp;&nbsp;<span class="keyword">return</span> <span class="string">403 Forbidden</span>;<br>
+                            }
+                        </code>
+                    </div>
+    
+                    <!-- conclusion -->
+                    <div class="conclusion">
+                        <h2>Conclusión</h2>
+                        <p>El uso de identificadores de IMDb en sitios de streaming no oficiales representa un caso de estudio fascinante sobre cómo la conveniencia técnica often supera las consideraciones de seguridad básicas. Este patrón no solo expone la infraestructura completa a enumeration attacks, sino que también demuestra la ausencia de principios fundamentales de diseño seguro.</p>
+                        <p>Para los profesionales de seguridad, este fenómeno sirve como recordatorio de la importancia de implementar controles de acceso adecuados, evitar identificadores predecibles y siempre assumir que los atacantes intentarán enumerar y acceder a recursos de manera sistemática.</p>
+                    </div>
+                </div>
+    
+                <!-- Sidebar -->
+                <div class="sidebar">
+                    <div class="sidebar-card">
+                        <h3>Temas relacionados</h3>
+                        <ul class="topic-list">
+                            <li><a href="#">Seguridad en APIs de streaming</a></li>
+                            <li><a href="#">Protección contra web scraping</a></li>
+                            <li><a href="#">Diseño de URLs seguras</a></li>
+                            <li><a href="#">Autenticación y autorización</a></li>
+                            <li><a href="#">Hardening de aplicaciones web</a></li>
+                        </ul>
+                    </div>
+    
+                    <div class="sidebar-card">
+                        <h3>Próximos artículos</h3>
+                        <ul class="topic-list">
+                            <!-- <li><a href="#">Vulnerabilidades en aplicaciones OTT</a></li> -->
+                            <li><a href="#">Análisis de malware en extensiones de navegador</a></li>
+                            <!-- <li><a href="#">Riesgos de seguridad en Smart TVs</a></li> -->
+                            <li><a href="#">Pentesting en aplicaciones de streaming</a></li>
+                        </ul>
+                    </div>
+    
+                    <div class="sidebar-card">
+                        <h3>Compartir artículo</h3>
+                        <div style="display: flex; gap: 1rem; margin-top: 1.2rem;">
+                            <a href="#" style="color: #3b5998;"><i class="fab fa-facebook fa-lg"></i></a>
+                            <a href="#" style="color: #1da1f2;"><i class="fab fa-twitter fa-lg"></i></a>
+                            <a href="#" style="color: #0077b5;"><i class="fab fa-linkedin fa-lg"></i></a>
+                            <a href="#" style="color: #25d366;"><i class="fab fa-whatsapp fa-lg"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    
+        <footer class="footer">
+            <p>&copy; 2023 TGRZ - Investigación en Ciberseguridad. Todos los derechos reservados.</p>
+        </footer>
+    </body>
+    </html>
